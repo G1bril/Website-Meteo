@@ -1,0 +1,124 @@
+/* Animation de l'arrière plan */
+.gradient-background {
+    height: 600px;
+    background: rgb(2,0,36);
+    background: linear-gradient(32deg, rgba(2,0,36,1) 0%, rgba(53,122,56,1) 35%, rgba(0,212,255,1) 100%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    min-height: 100vh;
+    /* Hauteur minimale de l'écran pour s'assurer que le fond s'étend sur toute la page */
+    display: flex;
+    flex-direction: column;
+
+}
+
+@-webkit-keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Styles pour le corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Conteneur principal */
+.container {
+    flex: 1;
+    /* Faites en sorte que le conteneur principal remplisse l'espace disponible */
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour la barre de navigation */
+.navbar {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    background-color: #4caf50;
+}
+
+.navbar a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #357a38;
+}
+
+/* Styles pour les images */
+img {
+    width: 20%;
+    height: 20%;
+    image-rendering: crisp-edges;
+}
+
+/* Styles pour les éléments de formulaire */
+input,
+button {
+    width: 70%;
+    margin: 10px;
+    /* Ajout d'un espacement entre les éléments */
+    padding: 8px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button a:hover {
+    background-color: #357a38;
+}
+
+/* Styles pour les informations météorologiques */
+.weather-info {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Styles pour les icônes météorologiques */
+.weather-info img {
+    margin-top: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    filter: brightness(0.8);
+}
