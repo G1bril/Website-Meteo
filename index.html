@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Ma Météo</title>
+</head>
+
+<body>
+    <div class="gradient-background">
+        <header role="banner">
+            <div class="container">
+                <nav class="navbar" role="navigation">
+                    <a href="index.html" role="link">Accueil</a>
+                    <a href="about.html" role="link">À propos</a>
+                    <a href="contact.html" role="link">Contact</a>
+                    <a href="login.html" role="link">Se Connecter</a>
+                </nav>
+            </div>
+        </header>
+        <div class="container" role="main">
+            <h1>Ma Météo</h1>
+            <div class="iconIMG">
+                <img src="https://cdn-icons-png.flaticon.com/512/552/552448.png" alt="icone meteo">
+            </div>
+            <input type="text" id="locationInput" placeholder="Entrez le nom d'une ville"
+                aria-label="Rechercher une ville">
+            <button id="searchButton" aria-label="Boutton de recherche">Rechercher</button>
+            <div class="weather-info">
+                <h2 id="location" aria-label="Emplacement"></h2>
+                <p id="temperature" aria-label="Température"></p>
+                <p id="description" aria-label="Condition"></p>
+                <p id="icons" aria-label="icone de météo"></p>
+            </div>
+        </div>
+
+        <footer role="contentinfo">
+            <div class="container">
+                <p>&copy; 2024 Ma Météo. Tous droits réservés.</p>
+            </div>
+        </footer>
+
+
+        <script src="js/script.js"></script>
+
+</body>
+
+</html>

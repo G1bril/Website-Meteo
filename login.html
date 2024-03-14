@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Connexion - Ma Météo</title>
+</head>
+
+<body>
+    <div class="gradient-background">
+        <header role="banner">
+            <div class="container">
+                <nav class="navbar" role="navigation">
+                    <a href="index.html" role="link">Accueil</a>
+                    <!-- Removed other irrelevant links -->
+                    <a href="login.html" role="link">Se Connecter</a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="container" role="main">
+            <h1>Connexion - Ma Météo</h1>
+            <form id="loginForm">
+                <input type="text" id="username" name="username" placeholder="Nom d'utilisateur" maxlength="10"
+                    aria-label="Nom d'utilisateur">
+                <input type="password" id="password" name="password" placeholder="Mot de passe"
+                    aria-label="Mot de passe">
+                <button type="submit" id="loginButton" onclick="login()" aria-label="Se connecter">Se connecter</button>
+            </form>
+            <p>Vous n'avez pas de compte ? <a href="register.html">Inscrivez-vous ici</a>.</p>
+            <p>Mot de passe oublié ? <a href="recuperation-mdp.html">Réinitialisez-le ici</a>.</p>
+        </div>
+
+        <footer role="contentinfo">
+            <div class="container">
+                <p>&copy; 2024 Ma Météo. Tous droits réservés.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/login.js"></script>
+
+</body>
+
+</html>
