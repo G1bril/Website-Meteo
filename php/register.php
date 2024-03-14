@@ -1,7 +1,6 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
 // Données de connexion à la base de données
 $servername = "localhost"; // Adresse du serveur MySQL
 $dbusername = "root"; // Nom d'utilisateur MySQL
@@ -13,7 +12,9 @@ $data = json_decode(file_get_contents('php://input'), true);
 
 // Variables du formulaire
 $username = $data['username'];
+$email = $data['email'];
 $password = $data['password'];
+$confirmPassword = $data['confirmPassword'];
 
 try {
     // Connexion à la base de données avec PDO
@@ -22,27 +23,22 @@ try {
     // Configuration des options PDO pour générer des exceptions en cas d'erreur
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Préparation de la requête SQL pour vérifier les informations de connexion
-    $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username AND password = :password");
+    // Préparation de la requête SQL pour l'insertion des données
+    $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
 
     // Liaison des paramètres
     $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':email', $email);
     $stmt->bindParam(':password', $password);
 
     // Exécution de la requête
     $stmt->execute();
 
-    // Vérification de l'existence de l'utilisateur dans la base de données
-    if ($stmt->rowCount() > 0) {
-        // L'utilisateur est authentifié avec succès
-        echo json_encode(array("message" => "Connexion réussie"));
-    } else {
-        // L'utilisateur n'existe pas ou les informations de connexion sont incorrectes
-        echo json_encode(array("error" => "Identifiants incorrects"));
-    }
+    // Réponse JSON en cas de succès
+    echo json_encode(array("message" => "Inscription réussie"));
 } catch (PDOException $e) {
     // En cas d'erreur, renvoie un message d'erreur JSON
-    echo json_encode(array("error" => "Erreur lors de la connexion: " . $e->getMessage()));
+    echo json_encode(array("error" => "Erreur lors de l'inscription: " . $e->getMessage()));
 }
 
 // Fermeture de la connexion

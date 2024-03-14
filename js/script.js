@@ -11,13 +11,13 @@ const descriptionElement = document.getElementById('description');
 const iconsElement = document.getElementById('icons');
 
 // Ajout d'un gestionnaire d'événement pour détecter quand l'utilisateur appuie sur une touche dans le champ de recherche
-locationInput.addEventListener("keypress", function(event) {
+locationInput.addEventListener("keypress", function (event) {
     // Si l'utilisateur appuie sur la touche "Entrée"
     if (event.key === "Enter") {
-      // Annule l'action par défaut, si nécessaire
-      event.preventDefault();
-      // Déclenche l'événement de clic sur le bouton de recherche
-      document.getElementById("searchButton").click();
+        // Annule l'action par défaut, si nécessaire
+        event.preventDefault();
+        // Déclenche l'événement de clic sur le bouton de recherche
+        document.getElementById("searchButton").click();
     }
 });
 
