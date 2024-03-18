@@ -121,3 +121,49 @@ button a:hover {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     filter: brightness(0.8);
 }
+
+
+/* Styles pour la page de contacte */
+/* Mise en page du formulaire de contact */
+#contact {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+/* Style pour les étiquettes des champs */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Style pour les champs de formulaire */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: calc(100% - 20px); /* Largeur égale à 100% moins les marges horizontales */
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Inclut les rembourrages et les bordures dans la largeur totale */
+}
+
+/* Style pour le bouton Envoyer */
+button[type="submit"] {
+    width: calc(100% - 20px); /* Largeur égale à 100% moins les marges horizontales */
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #357a38;
+}
