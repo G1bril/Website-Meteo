@@ -35,12 +35,15 @@ try {
     $stmt->execute();
 
     // Réponse JSON en cas de succès
-    echo json_encode(array("message" => "Inscription réussie"));
-} catch (PDOException $e) {
-    // En cas d'erreur, renvoie un message d'erreur JSON
-    echo json_encode(array("error" => "Erreur lors de l'inscription: " . $e->getMessage()));
-}
+    echo json_encode(array("success" => true));
+    
 
-// Fermeture de la connexion
-$conn = null;
+} catch (PDOException) {
+    // En cas d'erreur lors de l'inscription (par exemple, erreur de connexion à la base de données)
+    // Renvoyer un message d'erreur JSON
+    echo json_encode(array("success" => false, "error" => "Erreur lors de l'inscription: "));
+} finally {
+    // Fermeture de la connexion
+    $conn = null;
+}
 ?>
