@@ -49,11 +49,13 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
                 // Traitement de la réponse
                 console.log(data);
-                // Vous pouvez rediriger l'utilisateur ou afficher un message de succès ici
+                if (data.success) {
+                    // Redirection vers la page de connexion
+                    window.location.href = "login.html";
+                } else {
+                    // Afficher un message d'erreur si nécessaire
+                    console.log(data);
+                }
             })
-            .catch(error => {
-                console.error('Erreur lors de l\'envoi des données:', error);
-                // Vous pouvez afficher un message d'erreur à l'utilisateur ici
-            });
     });
 });
