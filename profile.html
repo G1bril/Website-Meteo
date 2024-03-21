@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Connexion - Ma Météo</title>
-    <script src="js/login.js"></script>
-
+    <title>Mon Profil - Ma Météo</title>
 </head>
 
 <body>
@@ -18,22 +16,17 @@
                     <a href="index.html" role="link">Accueil</a>
                     <a href="about.html" role="link">À propos</a>
                     <a href="contact.html" role="link">Contact</a>
-                    <a href="login.html" role="link">Se Connecter</a>
+                    <a href="logout.php" role="link">Se Déconnecter</a>
                 </nav>
             </div>
         </header>
-
         <div class="container" role="main">
-            <h1>Connexion - Ma Météo</h1>
-            <form id="loginForm">
-                <input type="text" id="username" name="username" placeholder="Nom d'utilisateur" maxlength="10"
-                    aria-label="Nom d'utilisateur">
-                <input type="password" id="password" name="password" placeholder="Mot de passe"
-                    aria-label="Mot de passe">
-                <button type="submit" id="loginButton" aria-label="Se connecter">Se connecter</button>
-            </form>
-            <p>Vous n'avez pas de compte ? <a href="register.html">Inscrivez-vous ici</a>.</p>
-            <p>Mot de passe oublié ? <a href="recuperation-mdp.html">Réinitialisez-le ici</a>.</p>
+            <h1>Mon Profil</h1>
+            <div class="profile-info">
+                <p><strong>Nom d'utilisateur :</strong> <span id="username"></span></p>
+                <p><strong>Email :</strong> <span id="email"></span></p>
+                <!-- Vous pouvez ajouter d'autres informations de profil ici -->
+            </div>
         </div>
 
         <footer role="contentinfo">
@@ -43,6 +36,7 @@
         </footer>
     </div>
 
+    <script src="js/profile.js"></script>
 </body>
 
 </html>
