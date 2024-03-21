@@ -21,7 +21,7 @@ try {
     // Check if user exists in database
     if ($stmt->rowCount() > 0) {
         // User is authenticated successfully
-        echo json_encode(array("message" => "Connexion réussie"));
+        echo json_encode(array("success" => true));
     } else {
         // User does not exist or login credentials are incorrect
         echo json_encode(array("error" => "Identifiants incorrects"));
