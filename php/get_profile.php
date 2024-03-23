@@ -24,16 +24,19 @@ if (isset($_SESSION['username'])) {
             $response['email'] = $profileData['email'];
         } else {
             // Si aucun utilisateur n'est trouvé, ajoutez un message d'erreur à la réponse
+            http_response_code(404); // Renvoyer un code d'erreur HTTP approprié
             $response['error'] = "Aucun profil trouvé pour cet utilisateur.";
         }
     } catch (PDOException $e) {
         // En cas d'erreur, ajouter un message d'erreur à la réponse
+        http_response_code(500); // Renvoyer un code d'erreur HTTP approprié
         $response['error'] = "Erreur lors de la récupération des informations du profil: " . $e->getMessage();
     }
 } else {
-    // Si aucune session n'est active, rediriger vers la page de connexion
-    header("Location: ../login.html");
-    exit();
+    // Si aucune session n'est active, renvoyer un code d'erreur HTTP 401 (non autorisé)
+    http_response_code(401);
+    $response['error'] = "Non autorisé";
+    $response['redirect'] = "login.html"; // Ajouter l'URL de redirection
 }
 
 // Définir le type de contenu comme JSON
