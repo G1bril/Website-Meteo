@@ -22,6 +22,7 @@ if (isset($_SESSION['username'])) {
             // Ajouter les données du profil à la réponse
             $response['username'] = $profileData['username'];
             $response['email'] = $profileData['email'];
+            $response['ville'] = $profileData['ville'];
         } else {
             // Si aucun utilisateur n'est trouvé, ajoutez un message d'erreur à la réponse
             http_response_code(404); // Renvoyer un code d'erreur HTTP approprié
