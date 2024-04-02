@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById('username').innerText = data.username;
                 document.getElementById('email').innerText = data.email;
                 // Vous pouvez ajouter d'autres informations de profil ici
+                document.getElementById('ville').innerText = data.ville;
             }
         })
         .catch(error => {
