@@ -23,3 +23,13 @@ CREATE TABLE contacts (
     message TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+INSERT INTO users (username, email, password, ville) VALUES
+('admin', 'admin@none.com', 'admin', NULL),
+('test', 'test@test.com', 'test', 'Paris');
+
+INSERT INTO admins (user_id) VALUES
+(1);
+
+INSERT INTO contacts (name, email, message) VALUES
+('John Jones', 'john@example.com', 'Ceci est un test');
