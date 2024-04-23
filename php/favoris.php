@@ -23,7 +23,7 @@ if (isset($_SESSION['username'])) {
             $stmt->execute();
 
             // Ajouter un message de succès à la réponse
-            $response['success'] = "La ville $ville a été ajoutée aux favoris de l'utilisateur $username avec succès.";
+            $response['success'] = "La ville $ville a été ajoutée aux favoris de l'utilisateur $username avec succès. Pensez à rafraichir la page.";
         } catch (PDOException $e) {
             // En cas d'erreur, ajouter un message d'erreur à la réponse
             http_response_code(500); // Renvoyer un code d'erreur HTTP approprié
