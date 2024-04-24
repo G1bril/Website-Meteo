@@ -47,7 +47,7 @@ if (isset($_SESSION['username']) && $_SESSION['username'] === 'admin') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
-    <title>CRUD - Contacts</title>
+    <title>Pannel Admin</title>
 </head>
 
 <body>
@@ -72,30 +72,7 @@ if (isset($_SESSION['username']) && $_SESSION['username'] === 'admin') {
                 <!-- Vous pouvez ajouter d'autres informations de profil ici -->
             </div>
 
-            <h2>Ajouter un contact</h2>
-            <form action="/meteo/php/index.php" method="post">
-                <div>
-                    <label>Nom</label>
-                    <input type="text" name="name" value="">
-                    <span></span>
-                </div>
-                <div>
-                    <label>Email</label>
-                    <input type="text" name="email" value="">
-                    <span></span>
-                </div>
-                <div>
-                    <label>Message</label>
-                    <textarea name="message"></textarea>
-                    <span></span>
-                </div>
-                <div>
-                    <input type="submit" value="Submit">
-                    <input type="reset" value="Reset">
-                </div>
-            </form>
-
-            <h2>Liste des contacts</h2>
+            <h2>Liste des messages</h2>
             <table border="1">
                 <tr>
                     <th>Nom</th>
@@ -113,13 +90,37 @@ if (isset($_SESSION['username']) && $_SESSION['username'] === 'admin') {
                     echo "<td>" . $row['email'] . "</td>";
                     echo "<td>" . $row['message'] . "</td>";
                     echo "<td>";
-                    echo "<a href='delete_contact.php?id=" . $row['id'] . "' onclick=\"return confirm('Are you sure you want to delete this contact?')\">Supprimer</a>";
+                    echo "<a href='delete_contact.php?id=" . $row['id'] . "' onclick=\"return confirm('Etes vous sûr de vouloir supprimer ce message?')\">Supprimer</a>";
                     echo "</td>";
                     echo "</tr>";
                 }
                 ?>
             </table>
             <br>
+            <h2>Liste des utilisateurs</h2>
+            <table border="1">
+                <tr>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Ville Fav</th>
+                    <th>Actions</th>
+                </tr>
+                <?php
+                // Prepare a select statement
+                $sql = "SELECT * FROM users";
+                $stmt = $conn->query($sql);
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    echo "<tr>";
+                    echo "<td>" . $row['username'] . "</td>";
+                    echo "<td>" . $row['email'] . "</td>";
+                    echo "<td>" . $row['ville'] . "</td>";
+                    echo "<td>";
+                    echo "<a href='delete_contact.php?id=" . $row['id'] . "' onclick=\"return confirm('Etes vous sûr de vouloir supprimer ce message?')\">Supprimer</a>";
+                    echo "</td>";
+                    echo "</tr>";
+                }
+                ?>
+            </table>
             <a href="logout.php">Déconnexion</a>
         </div>
 
