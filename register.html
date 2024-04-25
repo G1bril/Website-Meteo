@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Inscription - Ma Météo</title>
+    <script src="js/register.js"></script>
+</head>
+
+<body>
+    <div class="gradient-background">
+        <header role="banner">
+            <div class="container">
+                <nav class="navbar" role="navigation">
+                    <a href="index.html" role="link">Accueil</a>
+                    <a href="contact.html" role="link">Contact</a>
+                    <a href="login.html" role="link">Se Connecter</a>
+                    <a href="profile.php" role="link">Profile</a>
+                    <a href="about.html" role="link">À propos</a>
+                </nav>
+            </div>
+        </header>
+        <div class="container" role="main">
+            <h1>Inscription - Ma Météo</h1>
+            <form id="signupForm">
+                <input type="text" id="username" name="username" placeholder="Nom d'utilisateur"
+                    aria-label="Nom d'utilisateur">
+                <input type="email" id="email" name="email" placeholder="Adresse email" aria-label="Adresse email">
+                <input type="password" id="password" name="password" placeholder="Mot de passe"
+                    aria-label="Mot de passe">
+                <input type="password" id="confirmPassword" name="confirmPassword"
+                    placeholder="Confirmer le mot de passe" aria-label="Confirmer le mot de passe">
+                <button type="submit" id="signupButton" aria-label="S'inscrire">S'inscrire</button>
+            </form>
+            <p>Déjà inscrit ? <a href="login.html">Connectez-vous ici</a>.</p>
+        </div>
+
+        <footer role="contentinfo">
+            <div class="container">
+                <p>&copy; 2024 Ma Météo. Tous droits réservés.</p>
+            </div>
+        </footer>
+    </div>
+
+
+
+</body>
+
+</html>
