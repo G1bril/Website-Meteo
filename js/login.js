@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log(data);
                 if (data.success) {
                     // Redirection vers la page de profil
-                    window.location.href = "profile.html";
+                    window.location.href = "profile.php";
                 } else {
                     // Afficher un message d'erreur si nécessaire
                     console.error('Erreur lors de la réception des données:', data.error);
