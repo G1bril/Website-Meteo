@@ -11,4 +11,4 @@ Nouvelle version du projet avec une page de connexion
 
 ## Capture d'écran
 
-![alt text](https://github.com/G1bril/Website-Meteo/screenshot.png)
+![capture d'écran du projet](https://raw.githubusercontent.com/G1bril/Website-Meteo/refs/heads/main/screenshot.png)
