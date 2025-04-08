@@ -16,28 +16,34 @@ $username = $data['username'];
 $password = $data['password'];
 
 try {
-    // Prepare SQL query to select user data from users table
-    $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username");
+    // Prepare SQL query to check login credentials
+    $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username AND password = :password");
     $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':password', $password);
     $stmt->execute();
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($user) {
-        // Verify the password
-        if (password_verify($password, $user['password'])) {
-            // Password is correct, create session and return success response
-            $_SESSION['username'] = $username;
-            echo json_encode(array("success" => true));
-        } else {
-            // Password is incorrect, return error response
-            echo json_encode(array("error" => "Identifiants incorrects"));
-        }
+    // Check if user exists in database
+    if ($stmt->rowCount() > 0) {
+        // User is authenticated successfully
+        // Store user data in session
+        $_SESSION['username'] = $username;
+
+        // Return success response
+        echo json_encode(array("success" => true));
     } else {
-        // User not found, return error response
-        echo json_encode(array("error" => "Utilisateur non trouvé"));
+        // User does not exist or login credentials are incorrect
+        // Clear any existing session data
+        session_unset();
+        session_destroy();
+
+        echo json_encode(array("error" => "Identifiants incorrects"));
     }
 } catch (PDOException $e) {
     // If an error occurs during database operation, display error message
+    // Clear any existing session data
+    session_unset();
+    session_destroy();
+
     echo json_encode(array("error" => "Erreur lors de la connexion: " . $e->getMessage()));
 }
 ?>
