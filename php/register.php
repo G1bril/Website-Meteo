@@ -15,13 +15,13 @@ $password = $data['password'];
 
 try {
     // Hash the password
-    $password_hash = password_hash($password, PASSWORD_DEFAULT);
+    //$password_hash = password_hash($password, PASSWORD_DEFAULT);
 
     // Prepare SQL query to insert data into users table
     $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
     $stmt->bindParam(':username', $username);
     $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':password', $password_hash);
+    $stmt->bindParam(':password', $password);
     $stmt->execute();
 
     // JSON response on success

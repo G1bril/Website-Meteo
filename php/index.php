@@ -55,11 +55,11 @@ if (isset($_SESSION['username']) && $_SESSION['username'] === 'admin') {
         <header role="banner">
             <div class="container">
                 <nav class="navbar" role="navigation">
-                    <a href="index.html" role="link">Accueil</a>
-                    <a href="contact.html" role="link">Contact</a>
-                    <a href="login.html" role="link">Se Connecter</a>
-                    <a href="profile.html" role="link">Profile</a>
-                    <a href="about.html" role="link">À propos</a>
+                    <a href="../index.html" role="link">Accueil</a>
+                    <a href="../contact.html" role="link">Contact</a>
+                    <a href="../login.html" role="link">Se Connecter</a>
+                    <a href="../profile.php" role="link">Profile</a>
+                    <a href="../about.html" role="link">À propos</a>
                 </nav>
             </div>
         </header>
@@ -115,7 +115,7 @@ if (isset($_SESSION['username']) && $_SESSION['username'] === 'admin') {
                     echo "<td>" . $row['email'] . "</td>";
                     echo "<td>" . $row['ville'] . "</td>";
                     echo "<td>";
-                    echo "<a href='delete_contact.php?id=" . $row['id'] . "' onclick=\"return confirm('Etes vous sûr de vouloir supprimer ce message?')\">Supprimer</a>";
+                    echo "<a href='delete_user.php?id=" . $row['id'] . "' onclick=\"return confirm('Etes vous sûr de vouloir supprimer ce message?')\">Supprimer</a>";
                     echo "</td>";
                     echo "</tr>";
                 }
