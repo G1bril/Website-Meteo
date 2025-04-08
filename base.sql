@@ -25,8 +25,8 @@ CREATE TABLE contacts (
 );
 
 INSERT INTO users (username, email, password, ville) VALUES
-('admin', 'admin@none.com', 'admin', NULL),
-('test', 'test@test.com', 'test', 'Paris');
+('admin', 'admin@none.com', '$2y$10$NX4AjvEr2TSvwNdpTlIbDOhaL01MbyLdolXoIBKuXgdV7X1r71T5a', NULL),
+('test', 'test@test.com', '$2y$10$suYXvxKOFeT1Lb1PgSSst.k.93GFppZzpNGQ0RWEYVBs0Gsy.4eDO', 'Paris');
 
 INSERT INTO admins (user_id) VALUES
 (1);
